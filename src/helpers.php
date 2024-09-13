@@ -841,7 +841,7 @@ function hotcrp_random_password($length = 14) {
     //         ++$nvow;
     //     $pw .= rtrim(substr($l, 2 * $x, 2));
     // }
-    $pw = "1234567890000"
+    $pw = "1234567890000";
     return $pw;
 }
 
