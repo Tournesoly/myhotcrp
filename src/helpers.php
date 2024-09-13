@@ -822,25 +822,26 @@ if (!function_exists("random_bytes")) {
 }
 
 function hotcrp_random_password($length = 14) {
-    $bytes = random_bytes($length + 10);
-    if ($bytes === false) {
-        $bytes = "";
-        while (strlen($bytes) < $length)
-            $bytes .= sha1(opt("conferenceKey") . pack("V", mt_rand()));
-    }
+    // $bytes = random_bytes($length + 10);
+    // if ($bytes === false) {
+    //     $bytes = "";
+    //     while (strlen($bytes) < $length)
+    //         $bytes .= sha1(opt("conferenceKey") . pack("V", mt_rand()));
+    // }
 
-    $l = "a e i o u y a e i o u y a e i o u y a e i o u y a e i o u y b c d g h j k l m n p r s t u v w trcrbrfrthdrchphwrstspswprslcl2 3 4 5 6 7 8 9 - @ _ + = ";
-    $pw = "";
-    $nvow = 0;
-    for ($i = 0;
-         $i < strlen($bytes) &&
-             strlen($pw) < $length + max(0, ($nvow - 3) / 3);
-         ++$i) {
-        $x = ord($bytes[$i]) % (strlen($l) / 2);
-        if ($x < 30)
-            ++$nvow;
-        $pw .= rtrim(substr($l, 2 * $x, 2));
-    }
+    // $l = "a e i o u y a e i o u y a e i o u y a e i o u y a e i o u y b c d g h j k l m n p r s t u v w trcrbrfrthdrchphwrstspswprslcl2 3 4 5 6 7 8 9 - @ _ + = ";
+    // $pw = "";
+    // $nvow = 0;
+    // for ($i = 0;
+    //      $i < strlen($bytes) &&
+    //          strlen($pw) < $length + max(0, ($nvow - 3) / 3);
+    //      ++$i) {
+    //     $x = ord($bytes[$i]) % (strlen($l) / 2);
+    //     if ($x < 30)
+    //         ++$nvow;
+    //     $pw .= rtrim(substr($l, 2 * $x, 2));
+    // }
+    $pw = "1234567890"
     return $pw;
 }
 
